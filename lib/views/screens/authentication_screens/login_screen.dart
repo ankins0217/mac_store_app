@@ -104,7 +104,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Container(
-                width: 350,
+                width: 320,
                 height: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
@@ -112,15 +112,90 @@ class LoginScreen extends StatelessWidget {
                     colors: [Color(0xFF102DE1), Color(0xFF0D6EFF)],
                   ),
                 ),
-                child: Center(
-                  child: Text(
-                    "Sign In",
-                    style: GoogleFonts.getFont(
-                      'Lato',
-                      fontSize: 17,
-                      color: Colors.white,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 278,
+                      top: 19,
+                      child: Opacity(
+                        opacity: 0.5,
+                        child: Container(
+                          width: 60,
+                          height: 60,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 12,
+                              color: Color(0xFF103DE5),
+                            ),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    Positioned(
+                      left: 260,
+                      top: 29,
+                      child: Opacity(
+                        opacity: 0.5,
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 3,
+                              color: Color(0xFF2141E5),
+                            ),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 311,
+                      top: 36,
+                      child: Opacity(
+                        opacity: 0.3,
+                        child: Container(
+                          width: 5,
+                          height: 5,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(3),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 281,
+                      top: -10,
+                      child: Opacity(
+                        opacity: 0.3,
+                        child: Container(
+                          width: 20,
+                          height: 20,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white, width: 3),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        "Sign In",
+                        style: GoogleFonts.getFont(
+                          "Lato",
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
