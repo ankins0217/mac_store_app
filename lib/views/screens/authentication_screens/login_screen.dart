@@ -102,6 +102,27 @@ class LoginScreen extends StatelessWidget {
                   suffixIcon: Icon(Icons.visibility),
                 ),
               ),
+              SizedBox(height: 20),
+              Container(
+                width: 350,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF102DE1), Color(0xFF0D6EFF)],
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "Sign In",
+                    style: GoogleFonts.getFont(
+                      'Lato',
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
