@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mac_store_app/views/screens/authentication_screens/register_screen.dart';
+import 'package:mac_store_app/views/screens/authentication_screens/login_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Login to the Account",
+                "Create Your Account",
                 style: GoogleFonts.getFont(
                   'Lato',
                   fontSize: 23,
@@ -40,7 +40,6 @@ class LoginScreen extends StatelessWidget {
                 width: 200,
                 height: 200,
               ),
-
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -70,6 +69,42 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(10.0),
                     child: Image.asset(
                       'assets/icons/email.png',
+                      width: 20,
+                      height: 20,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Full Name",
+                  style: GoogleFonts.getFont(
+                    "Nunito Sans",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(9),
+                  ),
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  labelText: "Enter your full name",
+                  labelStyle: GoogleFonts.getFont(
+                    "Nunito Sans",
+                    fontSize: 14,
+                    letterSpacing: 0.1,
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Image.asset(
+                      'assets/icons/user.jpeg',
                       width: 20,
                       height: 20,
                     ),
@@ -197,7 +232,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     Center(
                       child: Text(
-                        "Sign In",
+                        "Sign Up",
                         style: GoogleFonts.getFont(
                           "Lato",
                           color: Colors.white,
@@ -209,12 +244,13 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Need an Account?",
+                    "Already have an Account?",
                     style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w500,
                       letterSpacing: 1,
@@ -226,13 +262,13 @@ class LoginScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return RegisterScreen();
+                            return LoginScreen();
                           },
                         ),
                       );
                     },
                     child: Text(
-                      "Sign Up",
+                      "Sign in",
                       style: GoogleFonts.roboto(
                         color: Color(0xFF103DE5),
                         fontWeight: FontWeight.bold,
