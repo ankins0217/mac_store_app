@@ -5,6 +5,9 @@ import 'package:mac_store_app/views/screens/authentication_screens/register_scre
 class LoginScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  late String email;
+  late String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +58,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   TextFormField(
+                    onChanged: (value) {
+                      email = value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Enter Your Email!!!";
@@ -98,6 +104,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   TextFormField(
+                    onChanged: (value) {
+                      password = value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Enter Your Password!!!";
@@ -134,7 +143,8 @@ class LoginScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
-                        print("passed");
+                        print(email);
+                        print(password);
                       } else {
                         print("failed");
                       }
