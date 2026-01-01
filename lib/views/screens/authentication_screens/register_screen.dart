@@ -3,15 +3,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mac_store_app/controllers/auth_controller.dart';
 import 'package:mac_store_app/views/screens/authentication_screens/login_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
+  RegisterScreen({super.key});
+
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   final AuthController _authController = AuthController();
 
   late String email;
-  late String password;
-  late String fullName;
 
-  RegisterScreen({super.key});
+  late String password;
+
+  late String fullName;
 
   @override
   Widget build(BuildContext context) {
