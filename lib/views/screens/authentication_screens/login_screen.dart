@@ -8,6 +8,8 @@ class LoginScreen extends StatelessWidget {
   late String email;
   late String password;
 
+  LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

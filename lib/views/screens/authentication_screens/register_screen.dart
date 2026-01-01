@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mac_store_app/controllers/auth_controller.dart';
 import 'package:mac_store_app/views/screens/authentication_screens/login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final AuthController _authController = AuthController();
 
   late String email;
   late String password;
   late String fullName;
+
+  RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -189,9 +193,11 @@ class RegisterScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
-                        print(email);
-                        print(password);
-                        print(fullName);
+                        _authController.registerNewUser(
+                          email,
+                          fullName,
+                          password,
+                        );
                       } else {
                         print("failed");
                       }

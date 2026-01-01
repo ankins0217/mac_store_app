@@ -8,12 +8,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Platform.isAndroid
       ? await Firebase.initializeApp(
+          name: "my-app-2c808",
           options: FirebaseOptions(
             apiKey: "AIzaSyC8SOtlpIk0GTCsht1YWw3ATZUKMs6MDxQ",
             appId: "1:4983066072:android:d4a937e81bbdcd2a2b36ad",
             messagingSenderId: "4983066072",
             projectId: "my-app-2c808",
-            // storageBucket: "gs://my-app-2c808.appspot.com",
+            storageBucket: "gs://my-app-2c808.firebasestorage.app",
           ),
         )
       : await Firebase.initializeApp();
